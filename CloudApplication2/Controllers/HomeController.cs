@@ -22,7 +22,7 @@ namespace CloudApplication2.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page 2.";
+            ViewBag.Message = "Your contact page 3.";
 
             return View();
         }
