@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using LaunchDarkly.Client;
 
 namespace CloudApplication2.Controllers
@@ -10,11 +6,6 @@ namespace CloudApplication2.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult About()
         {
             LdClient ldClient = new LdClient("sdk-0020a10d-45cd-4be2-94fd-87d70780248f");
 
@@ -30,9 +21,10 @@ namespace CloudApplication2.Controllers
                 // the code to run if the feature is off
                 return View();
             }
+        }
 
-
-
+           public ActionResult About()
+        {
             ViewBag.Message = "Your application description page.";
 
             return View();
