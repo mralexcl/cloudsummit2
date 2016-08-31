@@ -9,7 +9,7 @@ namespace CloudApplication2.Controllers
         {
             LdClient ldClient = new LdClient("sdk-0020a10d-45cd-4be2-94fd-87d70780248f");
 
-            User user = LaunchDarkly.Client.User.WithKey(User.Identity.Name);
+            User user = LaunchDarkly.Client.User.WithKey(System.Web.HttpContext.Current.User.Identity.Name);
             bool showFeature = ldClient.BoolVariation("new-home", user, false);
             if (showFeature)
             {
